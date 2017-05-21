@@ -20,7 +20,7 @@ _LICENSE = \
 """
 
 def _get_license(**kwargs):
-    replacements = dict([(k.upper(), v) for (k, v) in kwargs.items()])
+    replacements = dict([(k.upper(), v) for (k, v) in list(kwargs.items())])
     return string.Template(_LICENSE).substitute(replacements)
 
 _YEAR = datetime.datetime.now().strftime('%Y')
